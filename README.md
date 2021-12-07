@@ -2,9 +2,7 @@
 
 Start with the code provided here. 
 
-The server side code and routes have been provided for you. You shouldn't have to change anything in the server.
-
-Please create a database called `famous_people` and use the `database.sql` file to help you spin it up.
+The server side code and routes have been provided for you. You shouldn't have to change anything in the server. No database needed, the server serves it all out from memory.
 
 ```npm install``` 
 
@@ -12,6 +10,8 @@ Please create a database called `famous_people` and use the `database.sql` file 
 
 ```npm run client``` 
 
+Try a GET to `https://localhost:5000/people/` to see. POST works too with a body like 
+`{name: 'person', role: 'their role'}` and Content-Type `application/json`
 
 
 ## Required Features
@@ -31,4 +31,4 @@ Split the `FamousSection` Component into 3 Components:
 - a FamousPersonForm (to add a new person)
 - a FamousPersonList (to display each person in the database)
 - a FamousPerson (to display a single famous person's info as *'Felicia Day is famous for "The Guild".* (Use this inside of the FamousPersonList component.)
-
+- a delete button (you'll need to create a route for this too)
