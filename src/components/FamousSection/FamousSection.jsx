@@ -3,15 +3,12 @@ import axios from 'axios';
 import './FamousSection.css';
 
 function FamousSection() {
-  // Create two pieces of state to track the controlled form elements
+  // TODO: Create two pieces of state to track the controlled form elements
   // First: personName (getter) and setPersonName (setter)
   // Second: personRole (getter) and setPersonRole (setter)
-  const [personName, setPersonName] = useState('');
-  const [personRole, setPersonRole] = useState('');
 
-  // Create one pice of state to track the array of famous people
+  // TODO: Create one pice of state to track the array of famous people
   // famousPeople and setFamousPeople
-  const [famousPeople, setFamousPeople] = useState([]);
 
   // After mount, grab the list of people from the backend
   useEffect(() => {
@@ -24,19 +21,18 @@ function FamousSection() {
     const people = (await axios.get('/people')).data;
     console.log('this is the response from fetchPeople', people);
 
-    // take the data from the response and assign it to the local state made earlier
-    setFamousPeople(people)
+    // TODO: take the data from the response and assign it to the local state made earlier
+
   }
 
   const addPerson = async (evt) => {
     evt.preventDefault();
     console.log(`The person is ${personName} and they're famous for ${personRole}`);
 
-    // create POST request to add this new person to the database
+    // TODO: create POST request to add this new person to the database
     // HINT: you will have to create a new object containing the famousPersonName 
     // and famousPersonRole values the keys should be 'name' and 'role'
-    await axios.post('/people', { name: personName, role: personRole });
-    fetchPeople();
+    
   }
 
   return (
